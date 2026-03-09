@@ -1,7 +1,7 @@
 {% set name = "libcuobjclient" %}
-{% set version = "1.0.0.26" %}
+{% set version = "1.1.0.44" %}
 {% set lib_version = version.split(".")[:-1] | join(".") %}
-{% set cuda_version = "13.1" %}
+{% set cuda_version = "13.2.0" %}
 {% set platform = "linux-x86_64" %}  # [linux64]
 {% set platform = "linux-sbsa" %}  # [aarch64]
 {% set target_name = "x86_64-linux" %}  # [linux64]
@@ -14,8 +14,8 @@ package:
 
 source:
   url: https://developer.download.nvidia.com/compute/cuda/redist/{{ name }}/{{ platform }}/{{ name }}-{{ platform }}-{{ version }}-archive.{{ extension }}
-  sha256: aba19ffc2425b9981020d182f27093a52d150274482645621eefa029f276ef7c  # [linux64]
-  sha256: bd88f9e3ce8499d94faf444c176fd6d9f461337952a7e9b0ccceba0b77fd4a3e  # [aarch64]
+  sha256: e86b350fbfe36024ce8df8efbbca9e4007e30f5a07432a112433f821751b3854  # [linux64]
+  sha256: bab66b1e6a717c088f1e9213b833a8be7bf53a4d95a85482ba1c0cc004bf9680  # [aarch64]
 
 build:
   number: 0
