@@ -3,3 +3,6 @@ upstream_sources:
   - webpage:
       url: https://api.anaconda.org/package/conda-forge/libcuobjclient
       regex: '"version":\s*"([^"]+)"'
+    packages:
+      - libcuobjclient
+      - libcuobjclient-dev
