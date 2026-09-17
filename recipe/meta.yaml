@@ -8,7 +8,7 @@
 {% set target_name = "sbsa-linux" %}  # [linux and aarch64]
 {% set extension = "tar.xz" %}  # [not win]
 {% set sha256 = "721dddf4cd07ab5826a9fa3767736d1087038d73977fbb05b2002963002d2656" %}  # [linux64]
-{% set sha256 = "440595a82af6cc4f33c4266525d0a0e0211d8c192ee63fdb96f24e7b4c652123" %}  # [aarch64]
+{% set sha256 = "440595a82af6cc4f33c4266525d0a0e0211d8c192ee63fdb96f24e7b4c652123" %}  # [linux and aarch64]
 
 package:
   name: {{ name|lower }}-split
@@ -56,7 +56,7 @@ outputs:
       host:
         - cuda-version {{ cuda_version }}
         - libcufile
-        - libnuma
+        - libnuma {{ libnuma }}
       run:
         - {{ pin_compatible("cuda-version", max_pin="x.x") }}
         - {{ pin_compatible("libcufile", max_pin="x.x") }}
@@ -141,6 +141,8 @@ about:
   dev_url: https://docs.nvidia.com/gpudirect-storage/cuobject/index.html
 
 extra:
+  skip-lints:
+    - deprecate_license_url
   feedstock-name: libcuobjclient
   recipe-maintainers:
     - conda-forge/cuda
