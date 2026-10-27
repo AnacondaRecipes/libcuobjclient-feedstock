@@ -6,3 +6,12 @@ upstream_sources:
     packages:
       - libcuobjclient
       - libcuobjclient-dev
+  - webpage:
+      url: https://api.anaconda.org/package/conda-forge/libcuobjclient
+      regex: '"version":\s*"(13\.2(?:\.\d+)*)"'
+    feedstock_branch: '13.2'
+    version_matchspec: '>=13.2,<13.3'
+    supported: true
+    packages:
+      - libcuobjclient
+      - libcuobjclient-dev
