@@ -59,7 +59,7 @@ outputs:
         - libnuma {{ libnuma }}
       run:
         - {{ pin_compatible("cuda-version", max_pin="x.x") }}
-        - libcufile
+        - {{ pin_compatible("libcufile", max_pin="x.x") }}
         - {{ pin_compatible("libnuma", max_pin="x") }}
     test:
       requires:
